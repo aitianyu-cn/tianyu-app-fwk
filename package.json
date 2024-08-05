@@ -1,0 +1,36 @@
+{
+    "name": "tianyu-app-fwk",
+    "version": "0.0.1",
+    "description": "tianyu application framework extension",
+    "type": "commonjs",
+    "files": [
+        "dist"
+    ],
+    "scripts": {},
+    "author": "dev@aitianyu.cn",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:aitianyu-cn/tianyu-app-fwk.git"
+    },
+    "devDependencies": {
+        "@types/jest": "^29.2.5",
+        "@types/node": "^20.10.0",
+        "copyfiles": "^2.4.1",
+        "jest": "^29.3.1",
+        "jest-html-reporters": "^3.0.11",
+        "process": "^0.11.10",
+        "rimraf": "^3.0.2",
+        "ts-jest": "^29.0.3",
+        "ts-loader": "^9.5.1",
+        "ts-node": "^10.9.1",
+        "tsc-alias": "^1.8.2",
+        "typescript-eslint": "0.0.1-alpha.0"
+    },
+    "dependencies": {
+        "@aitianyu.cn/types": "0.0.13",
+        "core-js": "^3.26.1",
+        "cross-env": "^7.0.3",
+        "typescript": "^4.9.4"
+    }
+}
