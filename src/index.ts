@@ -1,14 +1,18 @@
 /** @format */
 
-// export all declares from infra
-export * from "./infra/Contributor";
-export * from "./infra/Declare";
-export * from "./infra/FwkExtension";
-export * from "./infra/Types";
+import { IContributor, IContributorFactorProtocolMap } from "./interface/contributor";
 
-// export all devtools public interface
-export * from "./infra/devtools/Devtools";
-export * from "./infra/devtools/Handler";
+declare global {
+    /** Tianyu App Framework global definition */
+    export const tianyu_app_fwk: {
+        /** contributor for global using */
+        contributor: IContributor<IContributorFactorProtocolMap>;
+    };
+}
 
-import * as Contributor from "./contributor/ContributorExporter";
-export { Contributor };
+export type {
+    IContributor,
+    IContributorFactorProtocolMap,
+    ContributorProtocolWithReturn,
+} from "./interface/contributor";
+export * as Contributor from "./contributor/loader";

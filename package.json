@@ -1,12 +1,26 @@
 {
-    "name": "tianyu-app-fwk",
+    "name": "@aitianyu.cn/tianyu-app-fwk",
     "version": "0.0.1",
     "description": "tianyu application framework extension",
+    "main": "./dist/lib/index.js",
+    "types": "./dist/types/index.d.ts",
+    "exports": {
+        ".": "./dist/lib/index.js"
+    },
     "type": "commonjs",
     "files": [
         "dist"
     ],
-    "scripts": {},
+    "scripts": {
+        "after-build": "rimraf ./build",
+        "before-build": "rimraf ./build ./dist",
+        "build": "npm run before-build && npm run compiler && npm run copy && npm run after-build",
+        "compiler": "tsc -p \"./tsconfig.build.json\" && tsc-alias -p \"./tsconfig.build.json\"",
+        "copy": "npm run copy-lib && npm run copy-types",
+        "copy-lib": "copyfiles -u 2 \"build/src/**/*.js\" dist/lib",
+        "copy-types": "copyfiles -u 2 \"build/src/**/*.d.ts\" dist/types",
+        "test-all": "jest --no-cache --verbose --coverage --passWithNoTests --detectOpenHandles"
+    },
     "author": "dev@aitianyu.cn",
     "license": "ISC",
     "repository": {

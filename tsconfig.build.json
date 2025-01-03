@@ -1,10 +1,10 @@
 {
-    "include": ["src", "test"],
+    "include": ["src"],
     "exclude": [],
     "compilerOptions": {
         "composite": true,
         "target": "ESNext",
-        "module": "ESNext",
+        "module": "CommonJS",
         "sourceMap": true,
         "strict": true,
         "esModuleInterop": true,
@@ -22,6 +22,7 @@
         "baseUrl": ".",
         "outDir": "./build",
         "paths": {
+            "src/*": ["src/*"],
             "app-fwk": ["src/index.ts"]
         }
     }
